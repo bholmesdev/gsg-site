@@ -1,0 +1,21 @@
+<h1>Hello there {person}!</h1>
+<button on:click="{changeName}">Change my name</button>
+<style>
+  h1 {
+    color: blue;
+  }
+  button {
+    border: none;
+    background: none;
+  }
+  button:hover {
+    background: #ccc;
+    font-size: 1.1rem;
+  }
+</style>
+<script>
+  let person = 'Ben'
+  const changeName = () => {
+    person = 'Jim'
+  }
+</script>
