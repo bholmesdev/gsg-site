@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="card-container">
+    <Card angle="-10deg"/>
+    <Card angle="5deg" />
+    <Card angle="20deg" />
+  </div>
+  <div class="header">
+    <h1>Golden</h1>
+    <h1 class="accented" style="padding-right: 3rem">Swarm</h1>
+    <h1 style="padding-right: 6rem">Games</h1>
+  </div>
+</div>
+  
+<style>
+  .container {
+    width: 100%;
+    height: 35rem;
+    display: flex;
+    padding: 3rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 35rem;
+    max-width: 100%;
+    height: 27rem;
+    margin-left: -7rem;
+  }
+  .header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70vw;
+    text-align: right;
+  }
+  h1 {
+    margin: 0;
+    color: var(--grey-9);
+    font-size: 7rem;
+  }
+  h1.accented {
+    color: var(--primary);
+  }
+</style>
+
+<script>
+  import Card from './Card.html'
+</script>
+  

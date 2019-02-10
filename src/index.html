@@ -1,21 +1,54 @@
-<h1>Hello there {person}!</h1>
-<button on:click="{changeName}">Change my name</button>
+<main>
+  <div class="content-container">
+      <div class="background-1">
+          <Banner />
+      </div>
+  </div>
+</main>
+
 <style>
-  h1 {
-    color: blue;
+  main {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2rem;
   }
-  button {
-    border: none;
-    background: none;
+  main:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/icons/diamond-pattern.svg');
+    background-size: 4rem;
   }
-  button:hover {
-    background: #ccc;
-    font-size: 1.1rem;
+  .content-container {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    overflow: visible;
+  }
+  .background-1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+  .background-1:before {
+    content: "";
+    position: absolute;
+    right: -40rem;
+    top: 0;
+    transform: rotate(20deg) translateZ(-2rem) translateY(-50rem) scale(1.7);
+    transform-origin: top right;
+    height: 200vh;
+    width: 100%;
+    background: var(--primary-bg-1);
+    background-size: 100%;
   }
 </style>
+
 <script>
-  let person = 'Ben'
-  const changeName = () => {
-    person = 'Jim'
-  }
+  import Banner from './Banner.html'
 </script>

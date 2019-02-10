@@ -1,3 +1,27 @@
+@import url('https://use.typekit.net/zah2tdf.css');
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: open-sans, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: p22-underground;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  --primary: hsl(51, 100%, 50%);
+  --primary-bg-1: hsl(227, 40%, 16%);
+  --primary-bg-2: hsl(227, 47%, 21%);
+  --grey-1: hsl(0, 0%, 10%);
+  --grey-shadow: hsla(0, 0%, 10%, 0.3);
+  --grey-9: hsl(0, 0%, 95%);
 }
