@@ -6,9 +6,10 @@
   "license": "MIT",
   "dependencies": {
     "rollup": "^1.1.2",
+    "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.1",
-    "sirv-cli": "^0.2.3",
     "svelte": "3.0.0-beta.3"
   },
   "devDependencies": {
@@ -16,7 +17,6 @@
   },
   "scripts": {
     "build": "npx rollup -c rollup.config.js",
-    "build-watch": "npx rollup --watch -c rollup.config.js",
-    "dev": "npx sirv public --dev"
+    "dev": "npx rollup --watch -c rollup.config.js"
   }
 }

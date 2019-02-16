@@ -1,10 +1,11 @@
+<nav></nav>
 <main>
-  <div class="content-container">
-      <div class="background-1">
-          <Banner />
-      </div>
+  <div class="backing">
+    <Content />
   </div>
 </main>
+<footer></footer>
+
 
 <style>
   main {
@@ -14,41 +15,20 @@
     overflow-y: auto;
     perspective: 2rem;
   }
-  main:before {
-    content: "";
-    position: fixed;
+  .backing:before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    height: 120%;
+    width: 100%;
+    transform: translateZ(-2rem) scale(3);
     background: url('/icons/diamond-pattern.svg');
     background-size: 4rem;
-  }
-  .content-container {
-    width: 100%;
-    max-width: 60rem;
-    margin: 0 auto;
-    overflow: visible;
-  }
-  .background-1 {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-  }
-  .background-1:before {
-    content: "";
-    position: absolute;
-    right: -40rem;
-    top: 0;
-    transform: rotate(20deg) translateZ(-2rem) translateY(-50rem) scale(1.7);
-    transform-origin: top right;
-    height: 200vh;
-    width: 100%;
-    background: var(--primary-bg-1);
-    background-size: 100%;
+    z-index: -1;
   }
 </style>
 
 <script>
-  import Banner from './Banner.html'
+  import Content from './sections/Content.html'
 </script>
