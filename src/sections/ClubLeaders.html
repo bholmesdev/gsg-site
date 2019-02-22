@@ -1,0 +1,120 @@
+<section>
+  <header>Club Leaders</header>
+  {#each profiles as profile}
+  <Card>
+    <div class="accent"></div>
+    <div class="image-container">
+      <div class="image-border">
+        <img src="{profile.image}" alt="{profile.name} profile picture" />
+      </div>
+    </div>
+    <h1>{profile.name}</h1>
+    <p class="description">{profile.description}</p>
+  </Card>
+  {/each}
+</section>
+
+<style>
+  .accent {
+    position: absolute;
+    transform: translateY(5rem) rotate(45deg);
+    transform-origin: bottom right;
+    background: linear-gradient(70deg, #89a5ff, #374164);
+    width: 200%;
+    height: 15rem;
+  }
+
+  .image-container {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+  .image-border {
+    margin: auto;
+    width: 9rem;
+    height: 9rem;
+    transform: rotate(45deg);
+    border-radius: 0.2rem;
+    /* border: 0.1rem solid var(--primary); */
+    box-shadow: 0 0 0 0.2rem white, 0 0 0 0.5rem var(--primary-bg-2);
+    overflow: hidden;
+    /**fix border radius issue in safari*/
+    opacity: 0.99;
+  }
+
+  img {
+    width: 100%;
+    transform: rotate(-45deg) scale(1.4);
+    border-radius: inherit;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: space-around;
+    width: 100vw;
+    max-width: 80rem;
+    margin: auto;
+  }
+
+  .description {
+    color: var(--primary-grey-5);
+    text-align: center;
+    font-family: P22-underground;
+  }
+</style>
+
+<script>
+  const applyNbsp = text => text.split(' ').join('\u00a0')
+  const profiles = [
+    {
+      name: 'Mary Xu',
+      description: 'Club overlord and design extraordinaire',
+      image: '/images/Mary-profile.jpg',
+    },
+    {
+      name: 'Jacob Allen',
+      description: 'Vice principal that-is-happy-to-see-you',
+      image: '/images/Jacob-profile.jpg',
+    },
+    {
+      name: 'Rocio',
+      description: 'Lone wolf queen of marketing',
+      image: '/images/Rocio-profile.jpg',
+    },
+    {
+      name: 'Alexa Flesch',
+      description: `Supreme ruler of design and ${applyNbsp(
+        'a e s t h e t i c'
+      )}`,
+      image: '/images/Alexa-profile.jpg',
+    },
+    {
+      name: 'Maxwell Forsyth',
+      description: 'Email communications wizard',
+      image: '/images/Maxwell-profile.jpg',
+    },
+    {
+      name: 'Bishov Sarkar',
+      description: 'Handles those clams',
+      image: '/images/Rishov-profile.jpg',
+    },
+    // {
+    //   name: 'Ben Holmes',
+    //   description: 'Grand conductor of the web',
+    //   image: '/images/BenH-profile.jpg',
+    // },
+    // {
+    //   name: 'Nicholas Wong',
+    //   description: 'Director of game rule design',
+    //   image: '/images/Nick-profile.jpg',
+    // },
+    // {
+    //   name: 'Ben Iglesia',
+    //   description: 'Supreme idea and hype man',
+    //   image: '/icons/gsg-logo.svg',
+    // },
+  ]
+  import Card from '../components/Card.html'
+</script>

@@ -52,7 +52,9 @@ section {
   max-width: 60rem;
 }
 
-a {
+a:link,
+a:visited {
+  color: var(--grey-9);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--primary);
@@ -70,6 +72,7 @@ a:hover {
   --primary-bg-2: hsl(227, 47%, 21%);
   --grey-1: hsl(0, 0%, 10%);
   --grey-shadow: hsla(0, 0%, 10%, 0.3);
+  --grey-7: hsl(0, 0%, 70%);
   --grey-9: hsl(0, 0%, 98%);
   --primary-grey-5: hsl(227, 22%, 41%);
   --primary-grey-9: hsl(227, 21%, 90%);
