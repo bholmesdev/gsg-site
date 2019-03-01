@@ -19,7 +19,6 @@
     display: flex;
     padding: 3rem;
     margin: auto;
-    margin-bottom: 2rem;
     justify-content: space-between;
     align-items: center;
   }
@@ -66,12 +65,16 @@
   }
 
   @media(max-width: 45rem) {
+    h1 {
+      font-size: 4rem;
+    }
     .container {
       justify-content: center;
     }
     .card-container {
       position: absolute;
-      margin-left: -2rem;
+      margin-left: -3rem;
+      margin-top: -1.5rem;
       --darkness: var(--dark-overlay);
     }
   }

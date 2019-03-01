@@ -21,6 +21,11 @@ body {
   background: var(--grey-9);
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 header {
   font-family: p22-underground;
   font-weight: 600;
