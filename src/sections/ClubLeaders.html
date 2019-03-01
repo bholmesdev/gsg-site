@@ -1,4 +1,4 @@
-<section>
+<section id="{sectionId}">
   <header>Club Leaders</header>
   {#each profiles as profile}
   <Card>
@@ -35,7 +35,6 @@
     height: 9rem;
     transform: rotate(45deg);
     border-radius: 0.2rem;
-    /* border: 0.1rem solid var(--primary); */
     box-shadow: 0 0 0 0.2rem white, 0 0 0 0.5rem var(--primary-bg-2);
     overflow: hidden;
     /**fix border radius issue in safari*/
@@ -51,11 +50,9 @@
   section {
     display: flex;
     flex-wrap: wrap;
-    align-items: space-around;
     justify-content: space-around;
     width: 100vw;
     max-width: 80rem;
-    margin: auto;
   }
 
   .description {
@@ -66,6 +63,8 @@
 </style>
 
 <script>
+  import Card from '../components/Card.html'
+
   const applyNbsp = text => text.split(' ').join('\u00a0')
   const profiles = [
     {
@@ -116,5 +115,6 @@
     //   image: '/icons/gsg-logo.svg',
     // },
   ]
-  import Card from '../components/Card.html'
+
+  export let sectionId
 </script>
