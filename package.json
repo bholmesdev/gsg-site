@@ -13,10 +13,13 @@
     "svelte": "3.0.0-beta.3"
   },
   "devDependencies": {
-    "eslint": "^5.13.0"
+    "eslint": "^5.13.0",
+    "git-scripts": "^0.2.1",
+    "surge": "^0.20.1"
   },
   "scripts": {
-    "build": "npx rollup -c rollup.config.js",
-    "dev": "npx rollup --watch -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "dev": "yarn build --watch --environment BUILD:development",
+    "up": "surge --project ./public --domain gsg.surge.sh"
   }
 }

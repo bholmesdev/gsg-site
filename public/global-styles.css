@@ -49,7 +49,8 @@ p {
 
 section {
   margin: auto;
-  padding-top: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   max-width: 60rem;
 }
 

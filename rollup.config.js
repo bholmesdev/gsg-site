@@ -3,7 +3,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 
-export default {
+const build = {
   input: 'main.js',
   output: {
     file: 'public/build/bundle.js',
@@ -17,7 +17,14 @@ export default {
         stylesheet.write('public/build/bundle.css')
       },
     }),
-    serve({ open: true, contentBase: 'public', port: 5000 }),
-    livereload(),
   ],
 }
+
+if (process.env.BUILD === 'development')
+  build.plugins = [
+    ...build.plugins,
+    serve({ open: true, contentBase: 'public', port: 5000 }),
+    livereload(),
+  ]
+
+export default build
