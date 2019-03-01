@@ -1,0 +1,40 @@
+<div class="container {menuToggled ? 'toggled' : ''}">
+  <div class="stripe-top"></div>
+  <div class="stripe-middle"></div>
+  <div class="stripe-bottom"></div>
+</div>
+
+<style>
+  .container {
+    height: 1.2rem;
+    width: 1.63rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .stripe-top,
+  .stripe-middle,
+  .stripe-bottom {
+    border-bottom: 0.1rem solid var(--grey-9);
+    transition: transform 0.1s, opacity 0.1s;
+  }
+  .stripe-top {
+    transform-origin: top right;
+  }
+  .stripe-bottom {
+    transform-origin: bottom right;
+  }
+  .toggled .stripe-top {
+    transform: rotate(-45deg);
+  }
+  .toggled .stripe-bottom {
+    transform: rotate(45deg);
+  }
+  .toggled .stripe-middle {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  export let menuToggled = false
+</script>

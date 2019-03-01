@@ -1,11 +1,21 @@
 <nav>
   <div class="navItems">
     <img class="logo" src="/icons/gsg-logo.svg" alt="GSG logo" />
-    {#each sections as link}
-    <a href="#{link.id}" on:click="{(event) => scrollToSection(event, link.id)}"
-      >{link.label}</a
+    <div class="link-container {menuToggled ? 'active' : 'hidden'}">
+      {#each sections as link}
+      <a
+        href="#{link.id}"
+        on:click="{(event) => scrollToSection(event, link.id)}"
+        >{link.label}</a
+      >
+      {/each}
+    </div>
+    <button
+      class="menu-toggle"
+      on:click="{() => menuToggled = !menuToggled}"
     >
-    {/each}
+    <MenuIcon menuToggled="{menuToggled}"/>
+  </button>
   </div>
 </nav>
 
@@ -27,6 +37,7 @@
   }
   a {
     font-family: 'p22-underground';
+    text-align: center;
     color: var(--grey-9);
     text-decoration: none;
     padding: 0 1.5rem;
@@ -41,9 +52,43 @@
     margin-right: auto;
     padding: 0.7rem;
   }
+  .menu-toggle {
+    display: none;
+    padding: 1rem;
+  }
+  @media (max-width: 45rem) {
+    .menu-toggle {
+      display: initial;
+    }
+    .link-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      visibility: visible;
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--dark-overlay);
+      transition: bottom 0.2s, opacity 0.3s;
+      z-index: -1;
+    }
+    .link-container.hidden {
+      bottom: 100vh;
+      opacity: 0;
+    }
+    a {
+      font-size: 2.5rem;
+      margin: 2rem;
+    }
+  }
 </style>
 
 <script>
+  import MenuIcon from './MenuIcon.html'
+
   const sections = [
     {
       label: 'Home',
@@ -59,6 +104,8 @@
     },
   ]
 
+  let menuToggled = false
+
   let scrollToSection = (event, sectionId) => {
     event.preventDefault()
     window.history.replaceState({}, '', '#' + sectionId)
@@ -66,5 +113,6 @@
       behavior: 'smooth',
       block: 'start',
     })
+    menuToggled = false
   }
 </script>
