@@ -1,9 +1,21 @@
-<div class="body" style="transform: rotate({angle})">
+<div class="body" style="--rotation-angle: {angle}">
   <img src="/icons/gsg-logo.svg" alt="Golden Swarm Games logo" />
 </div>
 
 <style>
+  .body:before {
+    --margin: calc(-1rem - 1px);
+    content: '';
+    position: absolute;
+    top: var(--margin);
+    left: var(--margin);
+    width: calc(100% + 2rem + 2px);
+    height: calc(100% + 2rem + 2px);
+    border-radius: 1.35rem;
+    background: var(--darkness);
+  }
   .body {
+    --rotation-angle: 0;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -11,7 +23,6 @@
     height: 21rem;
     width: 15rem;
     border-radius: 1rem;
-    margin: 2rem;
     background: linear-gradient(
       59deg,
       var(--primary-bg-2) 18%,
@@ -25,6 +36,14 @@
   }
   img {
     height: 45%;
+  }
+  @keyframes rotate {
+    to {
+      transform: rotate(var(--rotation-angle));
+    }
+  }
+  :global(.ready-for-anim) .body {
+    animation: rotate 0.5s forwards;
   }
 </style>
 

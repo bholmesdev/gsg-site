@@ -23,7 +23,11 @@ const build = {
 if (process.env.BUILD === 'development')
   build.plugins = [
     ...build.plugins,
-    serve({ open: true, contentBase: 'public', port: 5000 }),
+    serve({
+      open: true,
+      contentBase: 'public',
+      port: 5000,
+    }),
     livereload(),
   ]
 

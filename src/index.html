@@ -1,18 +1,18 @@
+<svelte:window on:load="{() => document.body.classList.add('ready-for-anim')}" />
 <NavBar />
 <main>
   <div class="backing">
     <Content />
   </div>
 </main>
-<footer></footer>
-
 
 <style>
   main {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     perspective: 2rem;
   }
   .backing:before {

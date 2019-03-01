@@ -4,11 +4,11 @@
     <BannerCard angle="5deg" />
     <BannerCard angle="20deg" />
   </div>
-  <div class="header">
-    <h1>Golden</h1>
-    <h1 class="accented" style="padding-right: 3rem">Swarm</h1>
-    <h1 style="padding-right: 6rem">Games</h1>
-  </div>
+  <header>
+    <h1 style="--offset: -5rem">Golden</h1>
+    <h1 class="accented" >Swarm</h1>
+    <h1 style="--offset: 5rem">Games</h1>
+  </header>
 </div>
   
 <style>
@@ -30,15 +30,19 @@
     width: 35rem;
     max-width: 100%;
     height: 27rem;
-    margin-left: -7rem;
+    margin-left: -5rem;
+    padding: 2rem;
   }
-  .header {
+  header {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 60vw;
     text-align: right;
+  }
+  header::before, header::after {
+    display: none;
   }
   h1 {
     margin: 0;
@@ -49,10 +53,30 @@
     color: var(--primary);
   }
 
+  @keyframes slide-header {
+    to {
+      margin-right: var(--offset);
+    }
+  }
+
   @media(max-width: 60rem) {
     h1 {
       font-size: 5rem;
     }
+  }
+
+  @media(max-width: var(--mobile-width)) {
+    .container {
+      justify-content: center;
+    }
+    .card-container {
+      position: absolute;
+      margin-left: -2rem;
+      --darkness: hsla(227, 40%, 12%, 0.8);
+    }
+  }
+  :global(.ready-for-anim) h1 {
+    animation: slide-header 0.5s forwards;
   }
 </style>
 
