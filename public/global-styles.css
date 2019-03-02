@@ -74,8 +74,8 @@ a:hover {
 
 :root {
   --primary: hsl(51, 100%, 50%);
-  --primary-bg-1: hsl(227, 40%, 16%);
-  --primary-bg-2: hsl(227, 47%, 21%);
+  --primary-bg-1: hsl(227, 40%, 9%);
+  --primary-bg-2: hsl(227, 47%, 17%);
   --grey-1: hsl(0, 0%, 10%);
   --grey-shadow: hsla(0, 0%, 10%, 0.3);
   --grey-7: hsl(0, 0%, 70%);
@@ -84,6 +84,6 @@ a:hover {
   --primary-grey-7: hsl(227, 22%, 70%);
   --primary-grey-9: hsl(227, 21%, 90%);
   --card-shadow: var(--grey-shadow) 0.5rem 0.5rem 2rem 0.5rem;
-  --dark-overlay: hsla(227, 40%, 12%, 0.8);
+  --dark-overlay: hsla(227, 40%, 9%, 0.9);
   --mobile-width: 45rem;
 }
