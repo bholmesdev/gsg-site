@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="327.521" height="506.434" viewBox="0 0 327.521 506.434">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.93" x2="1.883" y2="-0.23" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffee95"/>
+      <stop offset="1" stop-color="#182b6f"/>
+    </linearGradient>
+  </defs>
+  <g id="rook-svgrepo-com" transform="matrix(0.978, -0.208, 0.208, 0.978, -72.383, 64.332)">
+    <path id="Path_15" data-name="Path 15" d="M298.316,386.938c5.426-10.29,15.637-35.748-2.615-61.425-23.148-32.568-55.426-129.327-33.975-195.246h21.015V0H257.63V26.681H232.518V0H204.267V26.681H179.156V0H152.474V26.681H127.363V0H100.681V130.267h22.062c21.452,65.918-10.955,162.677-34.1,195.246-18.252,25.675-8.433,51.332-3.007,61.621A12.6,12.6,0,0,0,74,399.435v28.251c0,6.934,6.145,13.341,13.079,13.341h1.047v26.681H295.3V441.026h2.092c6.934,0,12.033-6.407,12.033-13.341V399.435A12.333,12.333,0,0,0,298.316,386.938Z" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -57,6 +57,7 @@ section {
   padding-top: 5rem;
   padding-bottom: 5rem;
   max-width: 60rem;
+  position: relative;
 }
 
 a:link,

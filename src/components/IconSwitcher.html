@@ -1,0 +1,53 @@
+<div class="{animate ? 'animate' : ''}">
+  {#each icons as icon, i}
+  <img
+    src="/icons/{icon}"
+    class="{i === index ? 'selected' : ''}"
+    alt="Team icon"
+  />
+  {/each}
+</div>
+
+<style>
+  div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  div.animate {
+    animation: spin calc(var(--anim-length) * 1s) ease-out forwards;
+  }
+  img {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    margin: 5%;
+    opacity: 0;
+    transition: opacity calc(var(--anim-length) * 0.5s) linear;
+  }
+  img.selected {
+    opacity: 1;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(400deg);
+    }
+    90% {
+      transform: rotate(350deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  export let icons = []
+  export let index = 0
+  export let animLength = 0
+  export let animate = false
+</script>
