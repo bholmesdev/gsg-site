@@ -1,59 +1,52 @@
 <section id="{sectionId}">
-  <div class="backing">
-    <header>Get Involved</header>
-    <p>We're always open to new members stopping by! Generally, we have</p>
-    <ul>
-      <li>
-        <span class="emphasis">General meetings Thursdays 7-8PM</span> to touch
-        base on each department's progress
-      </li>
-      <li>
-        <span class="emphasis">Work days Saturdays 2-4PM</span> to run play
-        tests of our game and collaborate on new ideas
-      </li>
-    </ul>
-    <div class="calendar-container">
-      <iframe
-        title="Event Calendar"
-        src="https://teamup.com/kstmf67ugzsq6jd4q2?showHeader=0&view=m&disableSidepanel=1"
-        frameborder="0"
-        height="100%"
-        width="100%"
-      ></iframe>
-    </div>
+  <header>Get Involved</header>
+  <p>We're always open to new members stopping by! Generally, we have</p>
+  <ul>
+    <li>
+      <strong>General meetings Thursdays 7-8PM</strong> to touch base on each
+      department's progress
+    </li>
+    <li>
+      <strong>Work days Saturdays 2-4PM</strong> to run play tests of our game
+      and collaborate on new ideas
+    </li>
+  </ul>
+  <div class="calendar-container">
+    <iframe
+      title="Event Calendar"
+      src="https://teamup.com/kstmf67ugzsq6jd4q2?showHeader=0&view=m&disableSidepanel=1"
+      frameborder="0"
+      height="100%"
+      width="100%"
+    ></iframe>
   </div>
 </section>
 
 <style>
-  section {
-    margin-top: -5rem;
+  header,
+  header:before,
+  header:after {
+    color: inherit;
   }
-  .backing {
-    background: var(--primary-bg-1);
-    padding: 3vw;
-    background-size: 6rem, auto;
-    padding-top: 10rem;
-    margin-top: -10rem;
-    padding-bottom: 10rem;
-    max-width: 100%;
-    border-radius: 2rem;
+  section {
+    background: #2a3046;
+    /* background-size: 7rem auto; */
+    padding: 3rem 3vw;
+    width: 100%;
+    border-radius: 1rem;
+    color: var(--primary-gold);
+    box-shadow: var(--card-shadow);
   }
 
   ul {
-    color: var(--grey-7);
+    color: var(--primary-gold-muted);
+  }
+  strong {
+    color: var(--primary-gold);
   }
 
   li {
     margin: 1rem 0;
-  }
-
-  .emphasis {
-    color: var(--grey-9);
-    font-weight: 600;
-  }
-
-  p {
-    color: var(--grey-9);
   }
 
   .calendar-container {
