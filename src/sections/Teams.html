@@ -1,6 +1,7 @@
 <section
   class="{animate ? 'wipe' : ''}"
   style="--anim-length: {wipeAnimLength}"
+  id="{sectionId}"
 >
   <header>Teams</header>
   <p class="backing-text">{curr.label}</p>
@@ -150,4 +151,5 @@
   let curr = sections[currIndex]
   let animate = false
   const wipeAnimLength = 0.8
+  export let sectionId = ''
 </script>
