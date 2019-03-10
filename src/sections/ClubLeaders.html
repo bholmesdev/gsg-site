@@ -1,15 +1,16 @@
 <section id="{sectionId}">
-  <header>Club Leaders</header>
-  {#each profiles as profile}
+  <header>Our leaders</header>
+  {#each leaders as leader}
   <Card>
     <div class="accent"></div>
+    <p class="type {leader.type}">{leader.type}</p>
     <div class="image-container">
       <div class="image-border">
-        <img src="{profile.image}" alt="{profile.name} profile picture" />
+        <img src="{leader.image}" alt="{leader.name} profile picture" />
       </div>
     </div>
-    <h1>{profile.name}</h1>
-    <p class="description">{profile.description}</p>
+    <h1>{leader.name}</h1>
+    <p class="description">{leader.description}</p>
   </Card>
   {/each}
 </section>
@@ -22,6 +23,28 @@
     background: linear-gradient(70deg, #89a5ff, #374164);
     width: 200%;
     height: 15rem;
+  }
+
+  .type {
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    width: 100%;
+    text-align: right !important;
+    padding: 0 2rem;
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+    text-align: center;
+    color: var(--primary-bg-1);
+    font-weight: 800;
+  }
+
+  .type.Exec {
+    background: var(--primary);
+  }
+
+  .type.Lead {
+    background: var(--primary-gold);
   }
 
   .image-container {
@@ -55,6 +78,12 @@
     max-width: 80rem;
     margin-bottom: 0;
   }
+  .header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 4rem;
+  }
 
   .description {
     color: var(--primary-grey-5);
@@ -67,16 +96,77 @@
   import Card from '../components/Card.html'
 
   const applyNbsp = text => text.split(' ').join('\u00a0')
-  const profiles = [
+  const leaders = [
     {
       name: 'Mary Xu',
       description: 'Club overlord and design extraordinaire',
       image: '/images/Mary-profile.jpg',
+      type: 'Exec',
     },
     {
       name: 'Jacob Allen',
-      description: 'Vice principal that-is-happy-to-see-you',
+      description: 'Vice president / Vice principal',
       image: '/images/Jacob-profile.jpg',
+      type: 'Exec',
+    },
+    {
+      name: 'Maxwell Forsyth',
+      description: 'Secretary / Email communications wizard',
+      image: '/images/Maxwell-profile.jpg',
+      type: 'Exec',
+    },
+    {
+      name: 'Bishov Sarkar',
+      description: 'Treasurer that handles those clams',
+      image: '/images/Rishov-profile.jpg',
+      type: 'Exec',
+    },
+    {
+      name: 'Alexa Flesch',
+      description: `Vengeful co-lead of design ${applyNbsp(
+        'a e s t h e t i c'
+      )}`,
+      image: '/images/Alexa-profile.jpg',
+      type: 'Lead',
+    },
+    {
+      name: 'Nicholas Wong',
+      description: 'Meniacal co-lead of design and game rules',
+      image: '/images/Nick-profile.jpg',
+      type: 'Lead',
+    },
+    {
+      name: 'Rocio',
+      description: 'Lone wolf queen of marketing',
+      image: '/images/Rocio-profile.jpg',
+      type: 'Lead',
+    },
+    {
+      name: 'Vishal Shah',
+      description: 'Grand conductor of production',
+      image: '',
+      type: 'Lead',
+    },
+    {
+      name: 'Ben Holmes',
+      description: 'Whimsical website developer ✨',
+      image: '/images/BenH-profile.jpg',
+      type: 'Lead',
+    },
+  ]
+
+  const teamLeads = [
+    {
+      name: 'Alexa Flesch',
+      description: `Vengeful co-lead of design ${applyNbsp(
+        'a e s t h e t i c'
+      )}`,
+      image: '/images/Alexa-profile.jpg',
+    },
+    {
+      name: 'Nicholas Wong',
+      description: 'Meniacal co-lead of design and game rules',
+      image: '/images/Nick-profile.jpg',
     },
     {
       name: 'Rocio',
@@ -84,37 +174,15 @@
       image: '/images/Rocio-profile.jpg',
     },
     {
-      name: 'Alexa Flesch',
-      description: `Supreme ruler of design and ${applyNbsp(
-        'a e s t h e t i c'
-      )}`,
-      image: '/images/Alexa-profile.jpg',
+      name: 'Vishal Shah',
+      description: 'Grand conductor of production',
+      image: '',
     },
     {
-      name: 'Maxwell Forsyth',
-      description: 'Email communications wizard',
-      image: '/images/Maxwell-profile.jpg',
+      name: 'Ben Holmes',
+      description: 'Whimsical website developer ✨',
+      image: '/images/BenH-profile.jpg',
     },
-    {
-      name: 'Bishov Sarkar',
-      description: 'Handles those clams',
-      image: '/images/Rishov-profile.jpg',
-    },
-    // {
-    //   name: 'Ben Holmes',
-    //   description: 'Grand conductor of the web',
-    //   image: '/images/BenH-profile.jpg',
-    // },
-    // {
-    //   name: 'Nicholas Wong',
-    //   description: 'Director of game rule design',
-    //   image: '/images/Nick-profile.jpg',
-    // },
-    // {
-    //   name: 'Ben Iglesia',
-    //   description: 'Supreme idea and hype man',
-    //   image: '/icons/gsg-logo.svg',
-    // },
   ]
 
   export let sectionId
