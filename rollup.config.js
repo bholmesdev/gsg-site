@@ -28,7 +28,9 @@ if (process.env.BUILD === 'development')
       contentBase: 'public',
       port: 5000,
     }),
-    livereload(),
+    livereload({
+      watch: 'public/build',
+    }),
   ]
 
 export default build
