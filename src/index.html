@@ -1,4 +1,5 @@
 <svelte:window on:load="{() => document.body.classList.add('ready-for-anim')}" />
+<ScrollAnimManager />
 <NavBar />
 <main>
   <div class="backing">
@@ -34,4 +35,5 @@
   import NavBar from './components/NavBar.html'
   import Content from './sections/Content.html'
   import Footer from './sections/Footer.html'
+  import ScrollAnimManager from './components/ScrollAnimManager.html'
 </script>
