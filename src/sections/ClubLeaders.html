@@ -1,7 +1,7 @@
 <section id="{sectionId}">
   <header>Our leaders</header>
   {#each leaders as leader}
-  <Card>
+  <PlayingCard size="large" doubleSided="{true}">
     <div class="accent"></div>
     <p class="type {leader.type}">{leader.type}</p>
     <div class="image-container">
@@ -11,17 +11,20 @@
     </div>
     <h1>{leader.name}</h1>
     <p class="description">{leader.description}</p>
-  </Card>
+  </PlayingCard>
   {/each}
 </section>
 
 <style>
+  h1 {
+    text-align: center;
+  }
   .accent {
     position: absolute;
-    transform: translateY(5rem) rotate(45deg);
+    transform: translateX(-6rem) rotate(45deg);
     transform-origin: bottom right;
     background: linear-gradient(70deg, #89a5ff, #374164);
-    width: 200%;
+    width: 25rem;
     height: 15rem;
   }
 
@@ -93,7 +96,9 @@
 </style>
 
 <script>
-  import Card from '../components/Card.html'
+  import PlayingCard from '../components/PlayingCard.html'
+  import { animationTriggers } from '../stores'
+  import { onMount } from 'svelte'
 
   const applyNbsp = text => text.split(' ').join('\u00a0')
   const leaders = [
@@ -155,35 +160,12 @@
     },
   ]
 
-  const teamLeads = [
-    {
-      name: 'Alexa Flesch',
-      description: `Vengeful co-lead of design ${applyNbsp(
-        'a e s t h e t i c'
-      )}`,
-      image: '/images/Alexa-profile.jpg',
-    },
-    {
-      name: 'Nicholas Wong',
-      description: 'Meniacal co-lead of design and game rules',
-      image: '/images/Nick-profile.jpg',
-    },
-    {
-      name: 'Rocio',
-      description: 'Lone wolf queen of marketing',
-      image: '/images/Rocio-profile.jpg',
-    },
-    {
-      name: 'Vishal Shah',
-      description: 'Grand conductor of production',
-      image: '',
-    },
-    {
-      name: 'Ben Holmes',
-      description: 'Whimsical website developer ✨',
-      image: '/images/BenH-profile.jpg',
-    },
-  ]
+  onMount(() => {
+    animationTriggers.set({
+      ...$animationTriggers,
+      '.doubleSidedCard': false,
+    })
+  })
 
   export let sectionId
 </script>

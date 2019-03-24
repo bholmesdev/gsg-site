@@ -1,7 +1,37 @@
 <svelte:window on:scroll="{onScroll}" />
 
 <script>
-  const onScroll = event => {
-    console.log(event)
+  import { onMount } from 'svelte'
+  import { animationTriggers } from '../stores'
+
+  let waiting = false
+  let bodyHeight = 0
+
+  onMount(() => {
+    bodyHeight = document.body.clientHeight
+  })
+
+  const onScroll = ({ target }) => {
+    if (waiting) return
+    waiting = true
+
+    Object.keys($animationTriggers).forEach(selector => {
+      target.querySelectorAll(selector).forEach(element => {
+        const elementTop = element.getBoundingClientRect().top
+        if (elementTop < bodyHeight * 0.8) {
+          if (!element.classList.contains('scrolled-to')) {
+            element.classList.add('scrolled-to')
+          }
+          animationTriggers.set({
+            ...$animationTriggers,
+            [selector]: true,
+          })
+        }
+      })
+    })
+
+    setTimeout(() => {
+      waiting = false
+    }, 200)
   }
 </script>

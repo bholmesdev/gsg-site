@@ -1,0 +1,107 @@
+<div class="container {doubleSided ? 'doubleSidedCard' : ''} {size}">
+  <div class="inner">
+    <div class="front-face">
+      <img src="/icons/gsg-logo.svg" alt="Golden Swarm Games logo" />
+    </div>
+    <div class="back-face">
+      <slot></slot>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    margin: 2rem;
+    transform-style: preserve-3d;
+    perspective: 600px;
+  }
+  .container.small,
+  .small .front-face,
+  .small .back-face {
+    height: 21rem;
+    width: 15rem;
+  }
+  .container.large,
+  .large .front-face,
+  .large .back-face {
+    height: 25rem;
+    width: 19rem;
+  }
+  :global(.scrolled-to).doubleSidedCard .back-face {
+    transform: rotateX(0deg);
+  }
+  :global(.scrolled-to).doubleSidedCard .front-face {
+    transform: rotateX(180deg);
+  }
+  .inner {
+    position: relative;
+  }
+  .front-face,
+  .back-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .front-face {
+    background: white;
+    z-index: 2;
+    transform: rotateX(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+  }
+  .front-face:before {
+    content: '';
+    position: absolute;
+    --border: 0.4rem;
+    top: var(--border);
+    left: var(--border);
+    right: var(--border);
+    bottom: var(--border);
+    background: linear-gradient(
+      59deg,
+      var(--primary-bg-2) 18%,
+      var(--primary-bg-1) 18%,
+      var(--primary-bg-1) 82%,
+      var(--primary-bg-2) 82%
+    );
+    border: 0.6rem solid var(--primary-bg-2);
+    box-shadow: 0 0 0 0rem #fff;
+    border-radius: 1rem;
+  }
+  .front-face:after {
+    --margin: calc(-1rem - 1px);
+    content: '';
+    position: absolute;
+    top: var(--margin);
+    left: var(--margin);
+    width: calc(100% + 2rem + 2px);
+    height: calc(100% + 2rem + 2px);
+    border-radius: 1.35rem;
+    background: var(--darkness);
+  }
+  .back-face {
+    border-radius: 1rem;
+    background: white;
+    transform: rotateX(-180deg);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    padding: 1rem;
+  }
+  img {
+    height: 45%;
+    z-index: 1;
+  }
+</style>
+
+<script>
+  import { animationTriggers } from '../stores'
+
+  export let doubleSided = false
+  export let size = 'small'
+</script>

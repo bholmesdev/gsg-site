@@ -23,12 +23,16 @@
     --width: 1rem;
     position: absolute;
     width: var(--width);
-    top: calc(25% + 3rem);
+    top: calc(25% + 4.5rem);
+    bottom: calc(75% + 1rem);
     left: calc((var(--bar-margin) - var(--width)) / 2);
     background: linear-gradient(var(--primary-bg-3) 60%, var(--primary) 90%);
     border-radius: 1rem;
-    animation: expand 5s forwards;
+    transition: bottom 1s;
     z-index: 0;
+  }
+  :global(.scrolled-to) > .timeline-bar {
+    bottom: 25%;
   }
   .item {
     width: 100%;
@@ -65,13 +69,18 @@
   }
   .circle {
     --size: 3rem;
-    background: var(--primary-bg-3);
+    background: url('/icons/check.svg') var(--primary-bg-3);
     position: absolute;
     left: calc((var(--bar-margin) - var(--size)) / 2);
     width: var(--size);
     height: var(--size);
     border-radius: 100%;
     z-index: 1;
+    transform: scale(0);
+    transition: transform 1s;
+  }
+  :global(.scrolled-to) .circle {
+    transform: scale(1);
   }
   .circle.ongoing {
     --border-size: 0.5rem;
@@ -100,14 +109,6 @@
     bottom: 0;
     border-radius: inherit;
   }
-  @keyframes expand {
-    from {
-      bottom: calc(75% + 1rem);
-    }
-    to {
-      bottom: 27%;
-    }
-  }
   @keyframes pulse {
     0% {
       transform: scale(1);
@@ -129,6 +130,8 @@
 </style>
 
 <script>
+  import { animationTriggers } from '../stores'
+  import { onMount } from 'svelte'
   const items = [
     {
       timeframe: 'Fall 2017',
@@ -153,6 +156,15 @@
       ongoing: true,
     },
   ]
+
+  onMount(() => {
+    animationTriggers.set({
+      ...$animationTriggers,
+      ['#' + sectionId]: false,
+    })
+  })
+
+  let timelineExpanded = false
 
   export let sectionId
 </script>
