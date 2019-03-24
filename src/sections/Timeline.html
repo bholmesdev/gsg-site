@@ -1,4 +1,5 @@
 <section id="{sectionId}">
+  <header>Timeline</header>
   {#each items as item}
   <div class="item">
     <div class="circle {item.ongoing ? 'ongoing' : ''}"></div>
@@ -22,7 +23,7 @@
     --width: 1rem;
     position: absolute;
     width: var(--width);
-    top: calc(25% + 1rem);
+    top: calc(25% + 3rem);
     left: calc((var(--bar-margin) - var(--width)) / 2);
     background: linear-gradient(var(--primary-bg-3) 60%, var(--primary) 90%);
     border-radius: 1rem;
