@@ -1,29 +1,25 @@
 <svelte:window on:load="{() => document.body.classList.add('ready-for-anim')}" />
 <NavBar />
 <main>
-  <div class="backing">
-    <Content />
-  </div>
+  <Content />
   <Footer />
 </main>
 
 <style>
   main {
     width: 100vw;
-    height: 100vh;
     overflow-x: hidden;
-    overflow-y: scroll;
+    background: url('/icons/diamond-pattern.svg');
+    background-size: 5rem;
     -webkit-overflow-scrolling: touch;
-    perspective: 2rem;
   }
   .backing:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    height: 200%;
+    height: 100%;
     width: 100%;
-    transform: translateZ(-2rem) scale(3);
     background: url('/icons/diamond-pattern.svg');
     background-size: 4rem;
     z-index: -1;
