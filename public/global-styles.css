@@ -84,6 +84,7 @@ a:hover {
   --grey-1: hsl(0, 0%, 10%);
   --grey-shadow: hsla(0, 0%, 10%, 0.3);
   --grey-7: hsl(0, 0%, 70%);
+  --grey-8: hsl(0, 0%, 85%);
   --grey-9: hsl(0, 0%, 98%);
   --primary-grey-5: hsl(227, 22%, 41%);
   --primary-grey-7: hsl(229, 80%, 84%);
