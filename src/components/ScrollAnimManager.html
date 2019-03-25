@@ -26,12 +26,17 @@
             ...$animationTriggers,
             [selector]: true,
           })
+        } else {
+          animationTriggers.set({
+            ...$animationTriggers,
+            [selector]: false,
+          })
         }
       })
     })
 
     setTimeout(() => {
       waiting = false
-    }, 200)
+    }, 100)
   }
 </script>

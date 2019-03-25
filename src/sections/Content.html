@@ -1,4 +1,4 @@
-<div class="stripe"></div>
+<div class="stripe {increaseStripeAngle ? 'increase-angle' : ''}"></div>
 <Banner sectionId="home" />
 <AboutBlurb />
 <Timeline sectionId="timeline" />
@@ -20,12 +20,16 @@
     top: 0;
     transform: rotate(20deg);
     transform-origin: top right;
-    height: 300rem;
+    height: 330rem;
     width: 120%;
     min-width: 40rem;
     background: var(--primary-bg-1);
     background-size: 100%;
     z-index: -1;
+    transition: transform 0.5s;
+  }
+  .stripe.increase-angle:before {
+    transform: rotate(10deg);
   }
 </style>
 
@@ -36,4 +40,14 @@
   import Teams from './Teams.html'
   import ClubLeaders from './ClubLeaders.html'
   import GetInvolved from './GetInvolved.html'
+  import {animationTriggers} from '../stores'
+  import {onMount} from 'svelte'
+
+  let increaseStripeAngle = false
+
+  onMount(() => {
+    animationTriggers.subscribe(triggered => {
+      increaseStripeAngle = triggered['#club-leaders']
+    })
+  })
 </script>

@@ -16,9 +16,6 @@
 </section>
 
 <style>
-  h1 {
-    text-align: center;
-  }
   .accent {
     position: absolute;
     transform: translateX(-6rem) rotate(45deg);
@@ -164,6 +161,7 @@
     animationTriggers.set({
       ...$animationTriggers,
       '.doubleSidedCard': false,
+      ['#' + sectionId]: false,
     })
   })
 

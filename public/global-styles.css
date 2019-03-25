@@ -14,6 +14,7 @@ h1 {
   font-size: 1.9rem;
   margin-bottom: 0;
   font-family: p22-underground;
+  text-align: center;
 }
 
 body {
@@ -89,6 +90,6 @@ a:hover {
   --primary-grey-8: hsl(229, 50%, 86%);
   --primary-grey-9: hsl(227, 21%, 90%);
   --card-shadow: var(--grey-shadow) 0.5rem 0.5rem 2rem 0.5rem;
-  --dark-overlay: hsla(227, 40%, 9%, 0.9);
+  --dark-overlay: hsla(227, 40%, 9%, 0.8);
   --mobile-width: 45rem;
 }

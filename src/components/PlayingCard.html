@@ -24,7 +24,7 @@
   .container.large,
   .large .front-face,
   .large .back-face {
-    height: 25rem;
+    height: 26rem;
     width: 19rem;
   }
   :global(.scrolled-to).doubleSidedCard .back-face {
@@ -75,15 +75,13 @@
     border-radius: 1rem;
   }
   .front-face:after {
-    --margin: calc(-1rem - 1px);
     content: '';
     position: absolute;
-    top: var(--margin);
-    left: var(--margin);
-    width: calc(100% + 2rem + 2px);
-    height: calc(100% + 2rem + 2px);
-    border-radius: 1.35rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.9rem;
     background: var(--darkness);
+    z-index: 2;
   }
   .back-face {
     border-radius: 1rem;
@@ -91,7 +89,7 @@
     transform: rotateX(-180deg);
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    padding: 1rem;
+    padding: 1.5rem;
   }
   img {
     height: 45%;
