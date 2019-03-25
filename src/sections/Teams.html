@@ -103,6 +103,20 @@
     width: 2rem;
     margin-right: 1rem;
   }
+
+  @media(max-width: 50rem) {
+    section {
+      grid-template-areas: 
+        'header header'
+        'text text'
+        'image buttons';
+      grid-template-columns: 1fr 7fr;
+      grid-template-rows: 4rem 1fr 3.5rem;
+    }
+    .backing-text {
+      display: none;
+    }
+  }
 </style>
 
 <script>

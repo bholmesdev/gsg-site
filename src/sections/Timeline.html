@@ -2,7 +2,11 @@
   <header>Timeline</header>
   {#each items as item}
   <div class="item">
-    <div class="circle {item.ongoing ? 'ongoing' : ''}"></div>
+    <div class="circle {item.ongoing ? 'ongoing' : ''}">
+      {#if !item.ongoing}
+      <img src="/icons/check.svg" alt="checkmark" />
+      {/if}
+    </div>
     <ul class="text">
       <h1>{item.timeframe}</h1>
       {#each item.info as infoText}
@@ -23,8 +27,8 @@
     --width: 1rem;
     position: absolute;
     width: var(--width);
-    top: calc(25% + 4.5rem);
-    bottom: calc(75% + 1rem);
+    top: calc(23% + 4.5rem);
+    bottom: calc(77% + 4.5rem);
     left: calc((var(--bar-margin) - var(--width)) / 2);
     background: linear-gradient(var(--primary-bg-3) 60%, var(--primary) 90%);
     border-radius: 1rem;
@@ -32,7 +36,7 @@
     z-index: 0;
   }
   :global(.scrolled-to) > .timeline-bar {
-    bottom: 25%;
+    bottom: 23%;
   }
   .item {
     width: 100%;
@@ -70,7 +74,7 @@
   }
   .circle {
     --size: 3rem;
-    background: url('/icons/check.svg') var(--primary-bg-3);
+    background: var(--primary-bg-3);
     position: absolute;
     left: calc((var(--bar-margin) - var(--size)) / 2);
     width: var(--size);
