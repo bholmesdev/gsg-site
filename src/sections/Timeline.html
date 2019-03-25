@@ -1,5 +1,4 @@
 <section id="{sectionId}">
-  <header>Timeline</header>
   {#each items as item}
   <div class="item">
     <div class="circle {item.ongoing ? 'ongoing' : ''}">
@@ -22,13 +21,14 @@
   section {
     --bar-margin: 8rem;
     max-width: 50rem;
+    padding-top: 0;
   }
   .timeline-bar {
     --width: 1rem;
     position: absolute;
     width: var(--width);
-    top: calc(23% + 4.5rem);
-    bottom: calc(77% + 4.5rem);
+    top: 12%;
+    bottom: 88%;
     left: calc((var(--bar-margin) - var(--width)) / 2);
     background: linear-gradient(var(--primary-bg-3) 60%, var(--primary) 90%);
     border-radius: 1rem;
@@ -36,7 +36,7 @@
     z-index: 0;
   }
   :global(.scrolled-to) > .timeline-bar {
-    bottom: 23%;
+    bottom: calc(12% + 10rem);
   }
   .item {
     width: 100%;
