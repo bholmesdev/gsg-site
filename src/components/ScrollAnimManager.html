@@ -38,20 +38,15 @@
   import { onMount } from 'svelte'
   import { animationTriggers } from '../stores'
 
-  let waiting = false
   let bodyHeight = 0
   let hasScrolled = false
+  let waitingOnAnimRequest = false
 
   onMount(() => {
     bodyHeight = document.body.clientHeight
   })
 
-  const onScroll = ({ target }) => {
-    hasScrolled = document.body.scrollTop !== 0
-
-    if (waiting) return
-    waiting = true
-
+  const animChecker = target => {
     Object.keys($animationTriggers).forEach(selector => {
       target.querySelectorAll(selector).forEach(element => {
         const elementTop = element.getBoundingClientRect().top
@@ -71,9 +66,17 @@
         }
       })
     })
+  }
 
-    setTimeout(() => {
-      waiting = false
-    }, 100)
+  const onScroll = ({ target }) => {
+    if (!waitingOnAnimRequest) {
+      window.requestAnimationFrame(() => {
+        animChecker(target)
+        waitingOnAnimRequest = false
+      })
+      waitingOnAnimRequest = true
+    }
+
+    hasScrolled = document.body.scrollTop !== 0
   }
 </script>
