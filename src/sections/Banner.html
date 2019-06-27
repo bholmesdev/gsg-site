@@ -1,4 +1,4 @@
-<div class="container" id="{sectionId}">
+<section class="container" id="{sectionId}">
   <div class="card-container">
     {#each cards as angle}
     <div class="card" style="--angle: {angle}">
@@ -6,12 +6,12 @@
     </div>
     {/each}
   </div>
-  <header>
+  <hgroup>
     <h1 style="--offset: -5rem">Golden</h1>
     <h1 class="accented">Swarm</h1>
     <h1 style="--offset: 5rem">Games</h1>
-  </header>
-</div>
+  </hgroup>
+</section>
 
 <style>
   .container {
@@ -45,7 +45,7 @@
   :global(.ready-for-anim) .card {
     animation: display-cards 0.8s ease-in forwards;
   }
-  header {
+  hgroup {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -53,14 +53,16 @@
     width: 60vw;
     text-align: right;
   }
-  header::before,
-  header::after {
+  h1::before,
+  h1::after {
     display: none;
   }
   h1 {
     margin: 0;
     color: var(--grey-9);
     font-size: 7rem;
+    font-weight: bold;
+    width: auto;
   }
   h1.accented {
     color: var(--primary);

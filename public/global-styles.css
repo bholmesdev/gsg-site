@@ -1,4 +1,5 @@
 @import url('https://use.typekit.net/zah2tdf.css');
+
 * {
   box-sizing: border-box;
 }
@@ -10,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 
-h1 {
+h2 {
   font-size: 1.9rem;
   margin-bottom: 0;
   font-family: p22-underground;
@@ -27,11 +28,12 @@ button {
   border: none;
 }
 
-header {
+h1 {
   font-family: p22-underground;
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 1rem;
+  margin-top: 0;
   text-align: center;
   color: white;
   display: flex;
@@ -40,8 +42,8 @@ header {
   width: 100%;
 }
 
-header:before,
-header:after {
+h1:before,
+h1:after {
   content: '•';
   color: var(--primary);
   padding: 0.7rem;
