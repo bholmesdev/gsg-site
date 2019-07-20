@@ -1,12 +1,22 @@
-<div class="stripe {increaseStripeAngle ? 'increase-angle' : ''}"></div>
-<Banner sectionId="home" />
-<AboutBlurb />
-<Timeline sectionId="timeline" />
-<Teams sectionId="teams" />
-<ClubLeaders sectionId="club-leaders" />
-<GetInvolved sectionId="getting-involved" />
+<main>
+  <div class="stripe {increaseStripeAngle ? 'increase-angle' : ''}"></div>
+  <Banner sectionId="home" />
+  <AboutBlurb />
+  <Timeline sectionId="timeline" />
+  <Teams sectionId="teams" />
+  <ClubLeaders sectionId="club-leaders" />
+  <GetInvolved sectionId="getting-involved" />
+  <ContactUs sectionId="contact-us" />
+</main>
 
 <style>
+  main {
+    width: 100vw;
+    overflow-x: hidden;
+    background: url('/icons/diamond-pattern.svg');
+    background-size: 5rem;
+    -webkit-overflow-scrolling: touch;
+  }
   .stripe {
     position: relative;
     width: 100%;
@@ -20,7 +30,7 @@
     top: 0;
     transform: rotate(20deg);
     transform-origin: top right;
-    height: 310rem;
+    height: 330rem;
     width: 120%;
     min-width: 40rem;
     background: var(--primary-bg-1);
@@ -40,6 +50,7 @@
   import Teams from './Teams.html'
   import ClubLeaders from './ClubLeaders.html'
   import GetInvolved from './GetInvolved.html'
+  import ContactUs from './ContactUs.html'
   import {animationTriggers} from '../stores'
   import {onMount} from 'svelte'
 

@@ -1,24 +1,24 @@
 <header>
-<nav>
   <div class="navItems">
     <img class="logo" src="/icons/gsg-logo.svg" alt="GSG logo" />
-    <div class="link-container {menuToggled ? 'active' : 'hidden'}">
-      {#each sections as link}
-      <a
-        href="#{link.id}"
-        on:click="{(event) => scrollToSection(event, link.id)}"
-        >{link.label}</a
-      >
-      {/each}
-    </div>
-    <button
-      class="menu-toggle"
-      on:click="{() => menuToggled = !menuToggled}"
-    >
-    <MenuIcon menuToggled="{menuToggled}"/>
-  </button>
+    <nav>
+        <div class="link-container {menuToggled ? 'active' : 'hidden'}">
+          {#each sections as link}
+          <a
+            href="#{link.id}"
+            on:click="{(event) => scrollToSection(event, link.id)}"
+            >{link.label}</a
+          >
+          {/each}
+        </div>
+        <button
+          class="menu-toggle"
+          on:click="{() => menuToggled = !menuToggled}"
+        >
+        <MenuIcon menuToggled="{menuToggled}"/>
+      </button>
+    </nav>
   </div>
-</nav>
 </header>
 
 <style>
@@ -30,7 +30,7 @@
     top: 0;
     left: 0;
     background: hsla(227, 40%, 9%, 0.5);
-    z-index: 1;
+    z-index: 999;
   }
   .navItems {
     display: flex;
@@ -109,6 +109,10 @@
       label: 'Getting Involved',
       id: 'getting-involved',
     },
+    {
+      label: 'Contact Us',
+      id: 'contact-us',
+    }
   ]
 
   let menuToggled = false

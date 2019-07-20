@@ -1,31 +1,8 @@
 <svelte:window on:load="{() => document.body.classList.add('ready-for-anim')}" />
 <ScrollAnimManager />
 <NavBar />
-<main>
-  <Content />
-  <Footer />
-</main>
-
-<style>
-  main {
-    width: 100vw;
-    overflow-x: hidden;
-    background: url('/icons/diamond-pattern.svg');
-    background-size: 5rem;
-    -webkit-overflow-scrolling: touch;
-  }
-  .backing:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: url('/icons/diamond-pattern.svg');
-    background-size: 4rem;
-    z-index: -1;
-  }
-</style>
+<Content />
+<Footer />
 
 <script>
   import NavBar from './components/NavBar.html'
