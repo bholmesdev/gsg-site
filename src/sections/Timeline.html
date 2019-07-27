@@ -7,7 +7,7 @@
       {/if}
     </div>
     <ul class="text">
-      <h2>{item.timeframe}</h2>
+      <h3>{item.timeframe}</h3>
       {#each item.info as infoText}
       <li>{infoText}</li>
       {/each}
@@ -55,7 +55,7 @@
     margin-left: var(--bar-margin);
     list-style-type: none;
   }
-  .text > h1 {
+  .text > h3 {
     color: var(--primary-bg-3);
     font-size: 1.5rem;
     margin: 0.5rem;

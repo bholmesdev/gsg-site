@@ -11,13 +11,6 @@ html {
   scroll-behavior: smooth;
 }
 
-h2 {
-  font-size: 1.9rem;
-  margin-bottom: 0;
-  font-family: p22-underground;
-  text-align: center;
-}
-
 body {
   margin: 0;
   background: var(--grey-9);
@@ -28,8 +21,14 @@ button {
   border: none;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: p22-underground;
+  font-weight: 600;
+}
+
+h2 {
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -42,12 +41,18 @@ h1 {
   width: 100%;
 }
 
-h1:before,
-h1:after {
+h2:before,
+h2:after {
   content: '•';
   color: var(--primary);
   padding: 0.7rem;
   padding-top: 0rem;
+}
+
+h3 {
+  font-size: 1.9rem;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 p {

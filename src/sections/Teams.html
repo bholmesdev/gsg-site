@@ -3,7 +3,7 @@
   style="--anim-length: {wipeAnimLength}"
   id="{sectionId}"
 >
-  <h1>Teams</h1>
+  <h2>Teams</h2>
   <p class="backing-text">{curr.label}</p>
   <IconSwitcher animate="{animate}" animLength="{wipeAnimLength}" icons="{sections.map(section => section.icon)}" index="{currIndex}" />
   <div class="text-container">
@@ -16,9 +16,9 @@
 </section>
 
 <style>
-  h1,
-  h1:before,
-  h1:after {
+  h2,
+  h2:before,
+  h2:after {
     color: var(--primary-bg-1);
     grid-area: header;
     z-index: 1;

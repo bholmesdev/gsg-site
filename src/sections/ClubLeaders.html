@@ -1,5 +1,5 @@
 <section id="{sectionId}">
-  <h1>Our leaders</h1>
+  <h2>Our leaders</h2>
   {#each leaders as leader}
   <PlayingCard size="large" doubleSided="{true}">
     <div class="accent"></div>
@@ -9,7 +9,7 @@
         <img src="{leader.image}" alt="{leader.name} profile picture" />
       </div>
     </div>
-    <h2>{leader.name}</h2>
+    <h3>{leader.name}</h3>
     <p class="description">{leader.description}</p>
   </PlayingCard>
   {/each}
