@@ -14,11 +14,13 @@
   },
   "devDependencies": {
     "eslint": "^5.13.0",
+    "gh-pages": "^2.1.1",
     "git-scripts": "^0.2.1",
     "surge": "^0.20.1"
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "deploy": "gh-pages -d public",
     "dev": "yarn build --watch --environment BUILD:development",
     "up": "surge --project ./public --domain gsg.surge.sh"
   }
